@@ -1,0 +1,7 @@
+<h1>All Tasks</h1>
+<%= link_to 'Create a new task', tasks_new_path %>
+<% @all_tasks.each_with_index do |task, index| %>
+   <p> <%= "#{index + 1}. " %> <%= check_box_tag :completed, task.completed, task.completed, disabled: true %> <%= link_to task.title, task_path(task.id) %> <%= task.details %> </p>
+<% end %>
+
+
